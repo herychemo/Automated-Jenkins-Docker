@@ -1,4 +1,4 @@
 
 if [[ -e /var/run/docker.sock ]]; then
     chown -R :docker /var/run/docker.sock
-;fi
+fi
