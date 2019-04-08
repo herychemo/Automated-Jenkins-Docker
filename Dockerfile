@@ -5,11 +5,13 @@ USER root
 
 RUN apt-get update && apt-get install -y \
     curl \
+    dos2unix  \
     socat
 
 RUN curl -sSL https://get.docker.com/ | sh
 
 COPY fix_docker_permission /etc/init.d/fix_docker_permission
+RUN dos2unix /etc/init.d/fix_docker_permission
 RUN chmod 755 /etc/init.d/fix_docker_permission
 RUN usermod -aG docker jenkins
 
