@@ -50,13 +50,13 @@ ADD /conf/credentials.xml /usr/share/jenkins/ref/credentials.xml
 ADD /conf/ssh_keys/ssh/id_rsa /usr/share/jenkins/ref/.ssh/id_rsa
 ADD /conf/ssh_keys/ssh/id_rsa.pub /usr/share/jenkins/ref/.ssh/id_rsa.pub
 
-COPY /conf/scripts/update_ssh_credentials.sh /update_ssh_credentials.sh
+COPY /conf/scripts/update_ssh_credentials.sh /usr/local/bin/update_ssh_credentials.sh
 
 USER root
-RUN dos2unix /update_ssh_credentials.sh
-RUN /update_ssh_credentials.sh
-RUN rm /update_ssh_credentials.sh
+RUN dos2unix /usr/local/bin/update_ssh_credentials.sh
+
 USER jenkins
+RUN /update_ssh_credentials.sh
 
 
 # Job Authentication
