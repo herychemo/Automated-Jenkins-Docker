@@ -53,9 +53,10 @@ ADD /conf/ssh_keys/ssh/id_rsa.pub /usr/share/jenkins/ref/.ssh/id_rsa.pub
 COPY /conf/scripts/update_ssh_credentials.sh /update_ssh_credentials.sh
 
 USER root
-RUN dos2unix /update_ssh_credentials.sh && /update_ssh_credentials.sh && rm /update_ssh_credentials.sh
+RUN dos2unix /update_ssh_credentials.sh
 USER jenkins
 
+RUN /update_ssh_credentials.sh && rm /update_ssh_credentials.sh
 
 # Job Authentication
 ADD /conf/jenkins.security.QueueItemAuthenticatorConfiguration.xml /usr/share/jenkins/ref/jenkins.security.QueueItemAuthenticatorConfiguration.xml
