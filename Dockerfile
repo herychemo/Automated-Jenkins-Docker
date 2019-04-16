@@ -56,7 +56,7 @@ USER root
 RUN dos2unix /usr/local/bin/update_ssh_credentials.sh
 
 USER jenkins
-RUN /update_ssh_credentials.sh
+RUN /bin/bash /usr/local/bin/update_ssh_credentials.sh
 
 
 # Job Authentication
