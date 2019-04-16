@@ -54,9 +54,10 @@ COPY /conf/scripts/update_ssh_credentials.sh /update_ssh_credentials.sh
 
 USER root
 RUN dos2unix /update_ssh_credentials.sh
+RUN /update_ssh_credentials.sh
+RUN rm /update_ssh_credentials.sh
 USER jenkins
 
-RUN /update_ssh_credentials.sh && rm /update_ssh_credentials.sh
 
 # Job Authentication
 ADD /conf/jenkins.security.QueueItemAuthenticatorConfiguration.xml /usr/share/jenkins/ref/jenkins.security.QueueItemAuthenticatorConfiguration.xml
