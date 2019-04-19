@@ -47,8 +47,8 @@ COPY /conf/groovy/executors.groovy /usr/share/jenkins/ref/init.groovy.d/executor
 
 # Credentials
 ADD /conf/credentials.xml /usr/share/jenkins/ref/credentials.xml
-ADD /conf/ssh_keys/ssh/id_rsa /usr/share/jenkins/ref/.ssh/id_rsa
-ADD /conf/ssh_keys/ssh/id_rsa.pub /usr/share/jenkins/ref/.ssh/id_rsa.pub
+ADD /conf/ssh_keys/git-ssh/id_rsa /usr/share/jenkins/ref/.ssh/id_rsa
+ADD /conf/ssh_keys/git-ssh/id_rsa.pub /usr/share/jenkins/ref/.ssh/id_rsa.pub
 
 COPY /conf/scripts/update_ssh_credentials.sh /usr/local/bin/update_ssh_credentials.sh
 

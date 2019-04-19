@@ -20,7 +20,7 @@
     <userRemoteConfigs>
       <hudson.plugins.git.UserRemoteConfig>
         <url>git@gitlab.com:herychemo/job-dsl-test.git</url>
-        <credentialsId>ssh</credentialsId>
+        <credentialsId>git-ssh</credentialsId>
       </hudson.plugins.git.UserRemoteConfig>
     </userRemoteConfigs>
     <branches>
