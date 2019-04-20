@@ -67,6 +67,7 @@ structs
 subversion
 timestamper
 token-macro
+view-job-filters
 workflow-api
 workflow-basic-steps
 workflow-cps-global-lib
